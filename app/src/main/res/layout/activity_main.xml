@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="702dp"
+        android:layout_height="450dp"
+
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/my_section"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/withdraw"
+            android:layout_width="102dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="163dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/my_selector"
+            android:elevation="2dp"
+            android:onClick="onClickWithdraw"
+            android:text="@string/withdraw"
+            android:textAlignment="center"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:theme="@style/BankTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/deposit"
+            android:layout_width="102dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="163dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/my_selector"
+            android:onClick="onClickDeposit"
+            android:text="@string/deposit"
+            android:textAlignment="center"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/constraintLayout3"
+            android:layout_width="369dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="160dp"
+            app:layout_constraintBottom_toTopOf="@+id/withdraw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:text="@string/account"
+                android:textAlignment="textEnd"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/accountOut"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/accountOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:gravity="top"
+                android:text="@string/outAccount"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_title"
+            android:layout_width="420dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="84dp"
+            android:background="@color/primary_dark"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.053">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="98dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="271dp"
+                android:text="@string/myAtm"
+                android:textColor="@color/icons"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Spinner
+            android:id="@+id/moneySpinner"
+            android:layout_width="94dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="39dp"
+            android:background="@color/divider"
+            android:entries="@array/money_arr"
+            android:focusable="true"
+            android:isScrollContainer="true"
+            android:popupBackground="@color/divider"
+            android:theme="@style/BankTheme"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/deposit"
+            app:layout_constraintStart_toEndOf="@+id/withdraw"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="416dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/money_in_hand"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="79dp"
+            android:layout_marginEnd="94dp"
+            android:text="@string/money_in_hand"
+            android:textAlignment="textEnd"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/balanceOut"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/balanceOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="125dp"
+            android:gravity="top"
+            android:text="@string/outBalance"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/money_in_hand"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--    android:onClick="onClickMoneyInHand"-->
+
+    <!--        android:onClick="sendSpinnerValues"-->
+<!--    android:clickable="true"-->
