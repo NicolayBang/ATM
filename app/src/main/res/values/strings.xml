@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">A1</string>
+    <string name="outAccount" >3000</string>
+    <string name="account">Account:</string>
+    <string name="outBalance">0</string>
+    <string name="deposit">DEPOSIT</string>
+    <string name="withdraw">WITHDRAW</string>
+    <string name="myAtm">MyATM</string>
+    <string name="money_in_hand">Money In Hand:</string>
+
+
+<string-array name="money_arr" clickable="true">
+    <item>500</item>
+    <item>1000</item>
+    <item>2000</item>
+    <item>3000</item>
+
+</string-array>
+</resources>
